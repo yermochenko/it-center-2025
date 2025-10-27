@@ -229,15 +229,15 @@ class MainTest {
 	}
 	@Test
 	void toRomanTest190() {
-		assertEquals("CXL", Main.toRoman(190));
+		assertEquals("CXC", Main.toRoman(190));
 	}
 	@Test
 	void toRomanTest194() {
-		assertEquals("CXLIV", Main.toRoman(194));
+		assertEquals("CXCIV", Main.toRoman(194));
 	}
 	@Test
 	void toRomanTest196() {
-		assertEquals("CXLVI", Main.toRoman(196));
+		assertEquals("CXCVI", Main.toRoman(196));
 	}
 	@Test
 	void toRomanTest200() {
