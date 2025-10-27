@@ -8,7 +8,12 @@ public class Main {
 	 * @throws RuntimeException если число не входит в диапазон от 1 до 500
 	 */
 	public static String toRoman(int number) {
+		if(number < 1 || number > 500) throw new RuntimeException("Неправильное число. Число должно быть от 1 до 500");
 		String result = "";
+		while(number >= 500) {
+			result += "D";
+			number -= 500;
+		}
 		while(number >= 100) {
 			result += "C";
 			number -= 100;
