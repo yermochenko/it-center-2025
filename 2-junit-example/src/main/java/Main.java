@@ -8,7 +8,28 @@ public class Main {
 	 * @throws RuntimeException если число не входит в диапазон от 1 до 500
 	 */
 	public static String toRoman(int number) {
-		return null;
+		String result = "";
+		while(number >= 100) {
+			result += "C";
+			number -= 100;
+		}
+		while(number >= 50) {
+			result += "L";
+			number -= 50;
+		}
+		while(number >= 10) {
+			result += "X";
+			number -= 10;
+		}
+		while(number >= 5) {
+			result += "V";
+			number -= 5;
+		}
+		while(number >= 1) {
+			result += "I";
+			number -= 1;
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {
