@@ -9,43 +9,24 @@ public class Main {
 	 */
 	public static String toRoman(int number) {
 		if(number < 1 || number > 500) throw new RuntimeException("Неправильное число. Число должно быть от 1 до 500");
-		int[] count = new int[6];
-		int i = 0;
-		while(number >= 500) {
-			count[i]++;
-			number -= 500;
-		}
-		i++;
-		while(number >= 100) {
-			count[i]++;
-			number -= 100;
-		}
-		i++;
-		while(number >= 50) {
-			count[i]++;
-			number -= 50;
-		}
-		i++;
-		while(number >= 10) {
-			count[i]++;
-			number -= 10;
-		}
-		i++;
-		while(number >= 5) {
-			count[i]++;
-			number -= 5;
-		}
-		i++;
-		while(number >= 1) {
-			count[i]++;
-			number -= 1;
+		int[] value = {500, 100, 50, 10, 5, 1};
+		int[] count = new int[value.length];
+		for(int i = 0; i < value.length; i++) {
+			while(number >= value[i]) {
+				count[i]++;
+				number -= value[i];
+			}
 		}
 		String[] digit = {"D", "C", "L", "X", "V", "I"};
 		String result = "";
-		for(i = 0; i < count.length; i++) {
+		for(int i = 0; i < count.length; i++) {
 			int n = count[i];
 			if(n == 4) {
-				result += digit[i] + digit[i - 1];
+				if(count[i - 1] == 0) {
+					result += digit[i] + digit[i - 1];
+				} else {
+					result = result.substring(0, result.length() - 1) + digit[i] + digit[i - 2];
+				}
 			} else {
 				result += digit[i].repeat(count[i]);
 			}
