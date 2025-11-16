@@ -45,5 +45,7 @@ public class ArrayList {
 		}
 	}
 
+	public void insert(int i, String s) {}
+
 	public void remove(int i) {}
 }
