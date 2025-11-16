@@ -23,5 +23,13 @@ public class ArrayList {
 		array[i] = s;
 	}
 
-	public void add(String s) {}
+	public void add(String s) {
+		String[] newArray = new String[array.length + 1];
+		int i;
+		for(i = 0; i < array.length; i++) {
+			newArray[i] = array[i];
+		}
+		array = newArray;
+		array[i] = s;
+	}
 }
