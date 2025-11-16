@@ -32,4 +32,6 @@ public class ArrayList {
 		array = newArray;
 		array[i] = s;
 	}
+
+	public void remove(int i) {}
 }
