@@ -44,4 +44,6 @@ public class ArrayList {
 			throw new ArrayIndexOutOfBoundsException(String.format("Index %d out of bounds for length %d", index, length));
 		}
 	}
+
+	public void remove(int i) {}
 }
