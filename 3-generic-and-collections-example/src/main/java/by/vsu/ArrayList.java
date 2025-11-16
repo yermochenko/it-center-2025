@@ -33,5 +33,7 @@ public class ArrayList {
 		array[i] = s;
 	}
 
+	public void insert(int i, String s) {}
+
 	public void remove(int i) {}
 }
