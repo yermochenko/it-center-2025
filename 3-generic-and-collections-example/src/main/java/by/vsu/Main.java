@@ -11,6 +11,20 @@ public class Main {
 		System.out.println("****************");
 	}
 
+	public static String max(ArrayList lines) {
+		if(lines.size() == 0) {
+			return null;
+		}
+		String currentMax = lines.get(0);
+		for(int i = 1; i < lines.size(); i++) {
+			String currentLine = lines.get(i);
+			if(currentLine.compareToIgnoreCase(currentMax) > 0) {
+				currentMax = currentLine;
+			}
+		}
+		return currentMax;
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Введите количество строк в списке");
@@ -40,5 +54,6 @@ public class Main {
 			return;
 		}
 		output(lines);
+		System.out.println("max line is: " + max(lines));
 	}
 }
