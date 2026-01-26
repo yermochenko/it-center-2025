@@ -1,17 +1,17 @@
 package by.vsu;
 
-public class ArrayList {
+public class ArrayList<T> {
 	private final static int BUFFER_SIZE = 10;
-	private String[] array;
+	private Object[] array;
 	private int length;
 
 	public ArrayList() {
-		array = new String[BUFFER_SIZE];
+		array = new Object[BUFFER_SIZE];
 		length = 0;
 	}
 
 	public ArrayList(int size) {
-		array = new String[size];
+		array = new Object[size];
 		length = size;
 	}
 
@@ -19,23 +19,24 @@ public class ArrayList {
 		return length;
 	}
 
-	public String get(int i) {
+	@SuppressWarnings("unchecked")
+	public T get(int i) {
 		checkIndex(i);
-		return array[i];
+		return (T) array[i];
 	}
 
-	public void set(int i, String s) {
+	public void set(int i, T element) {
 		checkIndex(i);
-		array[i] = s;
+		array[i] = element;
 	}
 
-	public void add(String s) {
+	public void add(T element) {
 		if(length == array.length) {
-			String[] newArray = new String[array.length + BUFFER_SIZE];
+			Object[] newArray = new Object[array.length + BUFFER_SIZE];
 			System.arraycopy(array, 0, newArray, 0, array.length);
 			array = newArray;
 		}
-		array[length] = s;
+		array[length] = element;
 		length++;
 	}
 
@@ -45,7 +46,7 @@ public class ArrayList {
 		}
 	}
 
-	public void insert(int i, String s) {}
+	public void insert(int i, T s) {}
 
 	public void remove(int i) {}
 }

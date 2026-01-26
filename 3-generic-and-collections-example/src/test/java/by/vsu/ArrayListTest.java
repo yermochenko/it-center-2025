@@ -7,46 +7,46 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArrayListTest {
 	@Test
 	void test01() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		assertEquals(0, arrayList.size());
 	}
 
 	@Test
 	void test02() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.get(0));
 	}
 
 	@Test
 	void test03() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.set(0, "test"));
 	}
 
 	@Test
 	void test04() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test");
 		assertEquals(1, arrayList.size());
 	}
 
 	@Test
 	void test05() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test");
 		assertEquals("test", arrayList.get(0));
 	}
 
 	@Test
 	void test06() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test");
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.get(1));
 	}
 
 	@Test
 	void test07() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test");
 		arrayList.set(0, "abc");
 		assertEquals("abc", arrayList.get(0));
@@ -54,14 +54,14 @@ class ArrayListTest {
 
 	@Test
 	void test08() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test");
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.set(1, "abc"));
 	}
 
 	@Test
 	void test09() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -70,7 +70,7 @@ class ArrayListTest {
 
 	@Test
 	void test10() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -81,7 +81,7 @@ class ArrayListTest {
 
 	@Test
 	void test11() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -90,7 +90,7 @@ class ArrayListTest {
 
 	@Test
 	void test12() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -99,7 +99,7 @@ class ArrayListTest {
 
 	@Test
 	void test13() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -113,7 +113,7 @@ class ArrayListTest {
 
 	@Test
 	void test14() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -122,7 +122,7 @@ class ArrayListTest {
 
 	@Test
 	void test15() {
-		ArrayList arrayList = new ArrayList();
+		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -131,13 +131,13 @@ class ArrayListTest {
 
 	@Test
 	void test16() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		assertEquals(3, arrayList.size());
 	}
 
 	@Test
 	void test17() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		assertNull(arrayList.get(0));
 		assertNull(arrayList.get(1));
 		assertNull(arrayList.get(2));
@@ -145,7 +145,7 @@ class ArrayListTest {
 
 	@Test
 	void test18() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "test A");
 		arrayList.set(1, "test B");
 		arrayList.set(2, "test C");
@@ -156,20 +156,20 @@ class ArrayListTest {
 
 	@Test
 	void test19() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.set(3, "test"));
 	}
 
 	@Test
 	void test20() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test");
 		assertEquals(4, arrayList.size());
 	}
 
 	@Test
 	void test21() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test");
 		assertNull(arrayList.get(0));
 		assertNull(arrayList.get(1));
@@ -179,14 +179,14 @@ class ArrayListTest {
 
 	@Test
 	void test22() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test");
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.get(4));
 	}
 
 	@Test
 	void test23() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test");
 		arrayList.set(0, "abc");
 		assertEquals("abc", arrayList.get(0));
@@ -197,14 +197,14 @@ class ArrayListTest {
 
 	@Test
 	void test24() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test");
 		assertThrows(ArrayIndexOutOfBoundsException.class, () -> arrayList.set(4, "abc"));
 	}
 
 	@Test
 	void test25() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -213,7 +213,7 @@ class ArrayListTest {
 
 	@Test
 	void test26() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -227,7 +227,7 @@ class ArrayListTest {
 
 	@Test
 	void test27() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");
@@ -236,7 +236,7 @@ class ArrayListTest {
 
 	@Test
 	void test28() {
-		ArrayList x = new ArrayList(3);
+		ArrayList<String> x = new ArrayList<>(3);
 		x.add("test A");
 		x.add("test B");
 		x.add("test C");
@@ -253,7 +253,7 @@ class ArrayListTest {
 
 	@Test
 	void test29() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.add("test A");
 		arrayList.add("test B");
 		arrayList.add("test C");

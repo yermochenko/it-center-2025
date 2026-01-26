@@ -3,7 +3,7 @@ package by.vsu;
 import java.util.Scanner;
 
 public class Main {
-	public static void output(ArrayList lines) {
+	public static <T> void output(ArrayList<T> lines) {
 		System.out.printf("*** Список с количеством элементов %d ***\n", lines.size());
 		for(int i = 0; i < lines.size(); i++) {
 			System.out.println(lines.get(i));
@@ -17,16 +17,16 @@ public class Main {
 		System.out.println("или 0, если список будет вводится до тех пор, пока не будет введена пустая строка.");
 		System.out.print("Количество: ");
 		int n = Integer.parseInt(sc.nextLine());
-		ArrayList lines;
+		ArrayList<String> lines;
 		if(n > 0) {
-			lines = new ArrayList(n);
+			lines = new ArrayList<>(n);
 			for(int i = 0; i < n; i++) {
 				System.out.printf("Введите элемент с индексом %d: ", i);
 				String s = sc.nextLine();
 				lines.set(i, s);
 			}
 		} else if(n == 0) {
-			lines = new ArrayList();
+			lines = new ArrayList<>();
 			for(int i = 0;; i++) {
 				System.out.printf("Введите элемент с индексом %d: ", i);
 				String s = sc.nextLine();

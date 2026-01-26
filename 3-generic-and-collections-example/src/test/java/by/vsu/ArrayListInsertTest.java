@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class ArrayListInsertTest {
 	@Test
 	void test01() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
@@ -22,7 +22,7 @@ class ArrayListInsertTest {
 
 	@Test
 	void test02() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
@@ -36,7 +36,7 @@ class ArrayListInsertTest {
 
 	@Test
 	void test03() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
@@ -50,7 +50,7 @@ class ArrayListInsertTest {
 
 	@Test
 	void test04() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
@@ -64,7 +64,7 @@ class ArrayListInsertTest {
 
 	@Test
 	void test05() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
@@ -73,7 +73,7 @@ class ArrayListInsertTest {
 
 	@Test
 	void test06() {
-		ArrayList arrayList = new ArrayList(3);
+		ArrayList<String> arrayList = new ArrayList<>(3);
 		arrayList.set(0, "abc");
 		arrayList.set(1, "xyz");
 		arrayList.set(2, "mnk");
