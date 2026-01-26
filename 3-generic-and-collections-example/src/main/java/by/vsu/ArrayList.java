@@ -1,39 +1,40 @@
 package by.vsu;
 
-public class ArrayList {
-	private String[] array;
+public class ArrayList<T> {
+	private Object[] array;
 
 	public ArrayList() {
-		array = new String[0];
+		array = new Object[0];
 	}
 
 	public ArrayList(int size) {
-		array = new String[size];
+		array = new Object[size];
 	}
 
 	public int size() {
 		return array.length;
 	}
 
-	public String get(int i) {
-		return array[i];
+	@SuppressWarnings("unchecked")
+	public T get(int i) {
+		return (T) array[i];
 	}
 
-	public void set(int i, String s) {
-		array[i] = s;
+	public void set(int i, T element) {
+		array[i] = element;
 	}
 
-	public void add(String s) {
-		String[] newArray = new String[array.length + 1];
+	public void add(T element) {
+		Object[] newArray = new Object[array.length + 1];
 		int i;
 		for(i = 0; i < array.length; i++) {
 			newArray[i] = array[i];
 		}
 		array = newArray;
-		array[i] = s;
+		array[i] = element;
 	}
 
-	public void insert(int i, String s) {}
+	public void insert(int i, T element) {}
 
 	public void remove(int i) {}
 }
