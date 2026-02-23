@@ -1,10 +1,9 @@
 package by.vsu;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
-class User implements Comparable<User> {
+public class User implements Comparable<User> {
 	private String name;
 	private Date birthday;
 	private String email;
@@ -44,12 +43,10 @@ class User implements Comparable<User> {
 		this.password = password;
 	}
 
-	public static User newUser(String name, int year, int month, int day, String email, String password) {
+	public static User newUser(String name, Date birthday, String email, String password) {
 		User user = new User();
 		user.setName(name);
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(year, month, day);
-		user.setBirthday(calendar.getTime());
+		user.setBirthday(birthday);
 		user.setEmail(email);
 		user.setPassword(password);
 		return user;

@@ -1,9 +1,9 @@
 package by.vsu;
 
-import java.util.Calendar;
+import java.util.Scanner;
 
 public class Main {
-	public static <E> void output(ArrayList<E> list) {
+	public static <E> void output(List<E> list) {
 		System.out.printf("*** Список с количеством элементов %d ***\n", list.size());
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
@@ -11,7 +11,7 @@ public class Main {
 		System.out.println("****************");
 	}
 
-	public static <E extends Comparable<E>> E max(ArrayList<E> list) {
+	public static <E extends Comparable<E>> E max(List<E> list) {
 		if(list.size() == 0) {
 			return null;
 		}
@@ -26,36 +26,55 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		ArrayList<String> listStr = new ArrayList<>();
-		listStr.add("Monday");
-		listStr.add("Tuesday");
-		listStr.add("Wednesday");
-		listStr.add("Thursday");
-		listStr.add("Friday");
-		listStr.add("Saturday");
-		listStr.add("Sunday");
-		output(listStr);
-		String maxStr = max(listStr);
-		System.out.println("max is " + maxStr);
+		Lists lists = new Lists();
+		List<Command> commands = new ArrayList<>();
+		commands.add(new CommandNewEmptyArrayListString());
+		commands.add(new CommandNewArrayListString());
+		commands.add(new CommandNewEmptyArrayListInteger());
+		commands.add(new CommandNewArrayListInteger());
+		commands.add(new CommandNewEmptyArrayListUser());
+		commands.add(new CommandNewArrayListUser());
+		commands.add(new CommandNewEmptyLinkedListString());
+		commands.add(new CommandNewLinkedListString());
+		commands.add(new CommandNewEmptyLinkedListInteger());
+		commands.add(new CommandNewLinkedListInteger());
+		commands.add(new CommandNewEmptyLinkedListUser());
+		commands.add(new CommandNewLinkedListUser());
+		commands.add(new CommandOutputListString());
+		commands.add(new CommandOutputListInteger());
+		commands.add(new CommandOutputListUser());
+		commands.add(new CommandAddListString());
+		commands.add(new CommandAddListInteger());
+		commands.add(new CommandAddListUser());
+		commands.add(new CommandMaxListString());
+		commands.add(new CommandMaxListInteger());
+		commands.add(new CommandMaxListUser());
+		commands.add(new CommandSizeListString());
+		commands.add(new CommandSizeListInteger());
+		commands.add(new CommandSizeListUser());
+		commands.add(new CommandExit());
 
-		ArrayList<Integer> listInt = new ArrayList<>();
-		listInt.add(345);
-		listInt.add(123);
-		listInt.add(678);
-		listInt.add(987);
-		listInt.add(426);
-		output(listInt);
-		Integer maxInt = max(listInt);
-		System.out.println("max is " + maxInt);
-
-		ArrayList<User> listUsers = new ArrayList<>();
-		listUsers.add(User.newUser("Иван", 2003, Calendar.OCTOBER, 23, "ivan@vsu.by", "abc"));
-		listUsers.add(User.newUser("Пётр", 1998, Calendar.MAY, 12, "petr@vsеu.by", "12345"));
-		listUsers.add(User.newUser("Василий", 2003, Calendar.OCTOBER, 23, "vasya@mail.ru", "basil"));
-		listUsers.add(User.newUser("Иннокентий", 1998, Calendar.FEBRUARY, 21, "kesha@gmail.com", "КЕША"));
-		listUsers.add(User.newUser("Вера", 1998, Calendar.MAY, 8, "vera@yandex.ru", "54321"));
-		output(listUsers);
-		User maxUser = max(listUsers);
-		System.out.println("max is " + maxUser);
+		Scanner input = new Scanner(System.in);
+		boolean work = true;
+		while(work) {
+			System.out.println("МЕНЮ:");
+			for(int i = 0; i < commands.size(); i++) {
+				Command command = commands.get(i);
+				System.out.printf("    %2d) %s\n", i + 1, command.name());
+			}
+			System.out.println();
+			System.out.print("Введите номер выбранного пункта меню: ");
+			int menuIndex = Integer.parseInt(input.nextLine());
+			if(menuIndex > 0 && menuIndex <= commands.size()) {
+				Command command = commands.get(menuIndex - 1);
+				work = !command.execute(lists);
+			} else {
+				System.out.println("Неверный номер пункта меню");
+			}
+			System.out.println();
+			System.out.println("Нажмите ВВОД для продолжения...");
+			input.nextLine();
+			System.out.println();
+		}
 	}
 }
