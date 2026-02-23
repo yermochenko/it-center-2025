@@ -1,6 +1,6 @@
 package by.vsu;
 
-public class ArrayList<T> {
+public class ArrayList<T> implements List<T> {
 	private Object[] array;
 
 	public ArrayList() {
@@ -11,19 +11,23 @@ public class ArrayList<T> {
 		array = new Object[size];
 	}
 
+	@Override
 	public int size() {
 		return array.length;
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public T get(int i) {
 		return (T) array[i];
 	}
 
+	@Override
 	public void set(int i, T element) {
 		array[i] = element;
 	}
 
+	@Override
 	public void add(T element) {
 		Object[] newArray = new Object[array.length + 1];
 		int i;
@@ -34,7 +38,9 @@ public class ArrayList<T> {
 		array[i] = element;
 	}
 
+	@Override
 	public void insert(int i, T element) {}
 
+	@Override
 	public void remove(int i) {}
 }
